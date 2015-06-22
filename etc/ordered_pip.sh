@@ -4,7 +4,7 @@ a=0
 while read line
 do     
     if [[ -n "$line" && "$line" != \#* ]] ; then
-        pip install $line
+        pip install $line "${@:2}"
         ((a = a + 1))
     fi
 done < $1
